@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/MediaFragment">
+
+    <fragment
+        android:id="@+id/MediaFragment"
+        android:name="com.monica.nagwamediatask.ui.MediaFragment"
+        android:label="fragment_home4g_offer_list"
+        tools:layout="@layout/fragment_media" />
+
+</navigation>

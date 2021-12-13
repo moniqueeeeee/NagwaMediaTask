@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+// app build.gradle
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.monica.nagwamediatask"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    kapt {
+        generateStubs = true
+    }
+}
+
+dependencies {
+
+    implementation(rootProject.ext.libraries.coreKtx)
+    implementation(rootProject.ext.libraries.appCompact)
+    implementation(rootProject.ext.libraries.materialDesign)
+    implementation(rootProject.ext.libraries.constraintLayout)
+
+    // retrofit
+    implementation(rootProject.ext.libraries.retrofit2)
+    implementation(rootProject.ext.libraries.retrofit2Converter)
+    implementation(rootProject.ext.libraries.retrofit2Adapter)
+
+
+    implementation(rootProject.ext.libraries.navigationKtx)
+    implementation(rootProject.ext.libraries.navigationComponent)
+    implementation(rootProject.ext.libraries.fragmentKtx)
+
+    implementation(rootProject.ext.libraries.appCompact)
+    implementation(rootProject.ext.libraries.stdlib)
+    implementation(rootProject.ext.libraries.gson)
+    implementation(rootProject.ext.libraries.constraintLayout)
+    implementation(rootProject.ext.libraries.materialDesign)
+
+
+    implementation(rootProject.ext.libraries.dagger)
+
+
+    implementation(rootProject.ext.libraries.rxjava)
+    implementation(rootProject.ext.libraries.rxandroid)
+    implementation(rootProject.ext.libraries.viewModel)
+    implementation(rootProject.ext.libraries.lifecycleExtension)
+    //dagger compiler
+    kapt rootProject.ext.apt.daggerCompiler
+    kapt rootProject.ext.apt.daggerProcessor
+
+}
